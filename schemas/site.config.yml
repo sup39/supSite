@@ -1,0 +1,46 @@
+title: siteOptions
+description: Options object for supSite
+type: object
+required: [name]
+additionalProperties: false
+properties:
+  name:
+    description: Site name shown in nav
+    type: string
+  srcRoot:
+    description: Root directory of source files
+    type: string
+    default: '.'
+  dstRoot:
+    description: Destination directory
+    type: string
+    default: './docs'
+  dirinfoName:
+    description: File name of `dirinfo` in directory
+    type: string
+    default: '@dirinfo.yml'
+  indexName:
+    description: File name representing directories
+    default: 'index.md'
+  rules:
+    description: An array of rules for compiling files
+    type: array
+    items:
+      $ref: '#/definitions/Rule'
+
+definitions:
+  Rule:
+    description: A rule for compiling files
+    type: object
+    required: [test, output, compile]
+    additionalProperties: false
+    properties:
+      test:
+        description: A RegExp object determining whether to apply the rule for given file
+        instanceof: RegExp
+      output:
+        description: Output file name
+        type: string
+      compile:
+        description: 'Compiler function (src: string, dst: string)'
+        instanceof: Function

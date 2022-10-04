@@ -1,0 +1,33 @@
+{
+  "name": "@sup39/sup-site",
+  "version": "0.1.0-alpha1",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/sup39/supSite",
+  "author": {
+    "name": "sup39",
+    "email": "dev@sup39.dev"
+  },
+  "repository": "github:sup39/supSite",
+  "files": [
+    "lib/",
+    "schemas/"
+  ],
+  "bin": {
+    "supSite": "./lib/index.js"
+  },
+  "eslintConfig": {
+    "env": {"node": true, "es2022": true},
+    "extends": ["@sup39/basic"]
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "schema-utils": "^4.0.0"
+  },
+  "devDependencies": {
+    "@sup39/eslint-config-basic": "^0.1.5",
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "^18.8.1",
+    "eslint": "^8.24.0"
+  }
+}

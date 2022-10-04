@@ -1,0 +1,33 @@
+title: dirinfo
+description: Directory info
+type: object
+required: [nav]
+additionalProperties: false
+properties:
+  nav:
+    description: File list shown in navigation bar
+    type: array
+    items:
+      $ref: '#/definitions/NavItem'
+  static:
+    description: Static file/directory list (no compilation, not shown in navigation bar)
+    type: array
+    items:
+      description: Static file/directory name
+      type: string
+
+definitions:
+  NavItem:
+    description: Information of each file
+    anyOf:
+      - type: object
+        description: Full detailed information
+        additionalProperties: false
+        required: [title, src]
+        properties:
+          title:
+            description: Title shown in nav
+            type: string
+          src:
+            description: Path to the source file
+            type: string
