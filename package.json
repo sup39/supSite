@@ -1,6 +1,6 @@
 {
   "name": "@sup39/sup-site",
-  "version": "0.1.0-alpha3",
+  "version": "0.1.0-alpha4",
   "main": "lib/index.js",
   "license": "MIT",
   "homepage": "https://github.com/sup39/supSite",
